@@ -31,6 +31,7 @@ class glove_model(nn.Module):
         embedding_2 = self.v_embed.weight.data.cpu().numpy()
         embedding = (embedding_1+embedding_2)/2
         embedding = (embedding_1+embedding_2)/2
+        embedding = (embedding_1+embedding_2)/2
         fout = open(file_name, 'w')
         fout.write('%d %d\n' % (len(word2id), self.embed_size))
         for w, wid in word2id.items():
